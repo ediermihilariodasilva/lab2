@@ -1,11 +1,21 @@
 public class RegistroResumo {
+    // Declaraçao dos atributos privados da classe.
     private int limiteResumos;
     private String[] temas;
     private String[] conteudos;
     private int quantidadeAtual;
     private int indiceSubstituicao;
+    private resumo[] resumos;
 
-    // Construtor: Inicializa os arrays com o tamanho limite especificado
+
+
+    // evoluicao
+    public RegistroResumo(int quantidade){
+        this.resumos = new resumo[quantidade ];
+    }
+
+    // Construtor: indica o numero de resumos e também este é aproveitado para inicializar outros arrays.
+    // também foram criados os arrays que dantes so declaramos.
     public RegistroResumos(int numeroDeResumos) {
         this.limiteResumos = numeroDeResumos;
         this.temas = new String[numeroDeResumos];
@@ -13,12 +23,10 @@ public class RegistroResumo {
         this.quantidadeAtual = 0;
         this.indiceSubstituicao = 0;
     }
-
     // Adiciona um resumo. Se o tema já existir, atualiza o conteúdo.
     // Se estiver cheio, substitui o resumo mais antigo sequencialmente.
-    public void adicionaResumo(String tema, String conteudo) {
-        // Regra: Não pode existir mais de um resumo com o mesmo tema.
-        // Se já existe, atualizamos o conteúdo dele na mesma posição.
+        public void adicionaResumo(String tema, String conteudo) {
+
         for (int i = 0; i < this.quantidadeAtual; i++) {
             if (this.temas[i].equals(tema)) {
                 this.conteudos[i] = conteudo;

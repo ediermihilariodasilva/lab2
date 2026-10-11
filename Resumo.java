@@ -8,6 +8,12 @@ public class Resumo {
         this.conteudo = conteudo;
         this.tema = tema;
     }
+    public String getTema{
+        return tema;
+    }
+    public String getConteudo{
+        return conteudo;
+    }
 
 
 }
