@@ -1,0 +1,58 @@
+CoISA
+association Descanso, RegistroTempoOnline, Disciplina, RegistroResumos
+---
+--
+---
+
+Descanso
+---
+- horasDescanso: int
+- numeroSemanas: int
+---
++ Descanso()
++ defineHorasDescanso(valor: int): void
++ defineNumeroSemanas(valor: int): void
++ getStatusGeral(): String
+---
+
+RegistroTempoOnline
+---
+- nomeDisciplina: String
+- tempoOnline: int
+- tempoOnlineEsperado: int
+---
++ RegistroTempoOnline(nomeDisciplina: String)
++ RegistroTempoOnline(nomeDisciplina: String, tempoOnlineEsperado: int)
++ adicionaTempoOnline(tempo: int): void
++ atingiuMetaTempoOnline(): boolean
++ toString(): String
+---
+
+Disciplina
+---
+- nomeDisciplina: String
+- horasEstudo: int
+- nota1: double
+- nota2: double
+- nota3: double
+- nota4: double
+---
++ Disciplina(nomeDisciplina: String)
++ cadastraHoras(horas: int): void
++ cadastraNota(nota: int, valorNota: double): void
++ aprovado(): boolean
++ toString(): String
+---
+
+RegistroResumos
+---
+- numeroDeResumos: int
+- resumos: String[]
+---
++ RegistroResumos(numeroDeResumos: int)
++ adicionaResumo(tema: String, conteudo: String): void
++ pegaResumos(): String[]
++ imprimeResumos(): String
++ contaResumos(): int
++ temResumo(tema: String): boolean
+---
