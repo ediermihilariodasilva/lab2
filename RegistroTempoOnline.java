@@ -5,6 +5,7 @@ public class RegistroTempoOnline {
     private int tempoOnlineUsado;
 
     // Construtor 1: Recebe apenas o nome. Define por padrão 60h de disciplina (120h online esperadas).
+    // Isto é caso o aluno vai usar o padrão que é de 60 horas.
     public ResgistroTempoOnline(String nomeDisciplina) {
         this.nomeDisciplina = nomeDisciplina;
         this.tempoOnlineEsperado = 120; // Padrão: o dobro de 60 horas
@@ -12,6 +13,7 @@ public class RegistroTempoOnline {
     }
 
     // Construtor 2: Recebe o nome e o tempo online esperado customizado de forma direta.
+    // isto é caso o aluno vai utilizar um ouro padrão que seja diferente de 60 horas.
     public ResgistroTempoOnline(String nomeDisciplina, int tempoOnlineEsperado) {
         this.nomeDisciplina = nomeDisciplina;
         this.tempoOnlineEsperado = tempoOnlineEsperado;
@@ -27,7 +29,9 @@ public class RegistroTempoOnline {
 
     // Verifica se o tempo online usado é maior ou igual à meta estabelecida
     public boolean atingiuMetaTempoOnline() {
-        return this.tempoOnlineUsado >= this.tempoOnlineEsperado;
+         if(this.tempoOnlineUsado >= this.tempoOnlineEsperado){
+             return true ;
+        }
     }
 
     // Retorna a representação textual do objeto
