@@ -1,0 +1,230 @@
+html {
+    height: 100%;
+}
+body {
+    --background-header: #303641;
+    --background-main: #373d47;
+    --dark-grey: #959595;
+    --font-color: #FFFFFF;
+    --button-hover: #12E083;
+    
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.flex-container {
+    display: flex;
+    height: 100%;
+}
+.flex-column {
+    display: flex;
+    width: 100%;
+    flex-direction: column
+}
+
+header {
+    background-color: var(--background-header);
+    padding: 0 1em;
+
+    box-shadow: 0 2px 3px #0000004f;
+    z-index: 0;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    box-sizing: border-box;
+    height: 4em;
+    padding: 0.5em 0;
+    
+    border-bottom: thin solid #939796;
+
+    font-family: 'Russo One', sans-serif;
+}
+
+.logo {
+    font-size: 2em;
+    color: var(--font-color);
+    text-transform: uppercase;
+}
+
+.config-page {
+    display: flex;
+    position: fixed;
+    right: 1em;
+    top: 0;
+}
+
+#start-togetherjs {
+    font-family: arial;
+    background-color: #FFF;
+    border: thin solid #d5d5d5;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+#start-togetherjs::before {
+    display: inline-block;
+
+    width: 12px; 
+    height: 12px;
+
+    background-image: url('img/together-icon.png');
+    background-size: 12px 12px;
+    content: "";
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 3em;
+}
+
+.error {
+    color: var(--font-color);
+}
+
+
+.menu button {
+    color: var(--font-color);
+    
+    border-radius: 8px;
+
+    padding: 10px;
+
+    transition: 400ms;
+}
+
+.menu button:not(:last-child)::after {
+    margin-left: 1em;
+    content: " \2011";
+    color: var(--font-color);
+}
+
+.menu button:not(:disabled):hover {
+    color: var(--button-hover);
+    background-color: #404857;
+}
+
+.menu button:disabled {
+    color: var(--dark-grey);
+    cursor: default;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+
+    background-color: var(--background-main);
+
+    padding: 0.5em;
+    
+    align-self: center;
+    width: 100%;
+    height: 70%;
+ }
+
+main .trace {
+    box-shadow: 1px 3px rgba(0, 0, 0, 0.24), 1px 2px rgba(0, 0, 0, 0.24);
+    outline-color: var(--background-header);
+    border-radius: 4px;
+    overflow: hidden;
+    overflow-y: auto;
+    display: hidden;
+    flex-flow: column;
+    background-color: #FFF;
+ }
+
+main .CodeMirror {
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    flex-grow: 1;
+
+    box-shadow: 1px 3px rgba(0, 0, 0, 0.24), 1px 2px rgba(0, 0, 0, 0.24);
+    outline-color: var(--background-header);
+    width: 50%;
+    height: auto;
+    margin: 0.8rem;
+}
+
+main .CodeMirror-code {
+    cursor: text;
+}
+
+main div#myDiagramDiv {
+    box-shadow: 1px 3px rgba(0, 0, 0, 0.24), 1px 2px rgba(0, 0, 0, 0.24);
+    outline-color: var(--background-header);
+    border-radius: 4px;
+    overflow: hidden;
+    overflow-y: auto;
+
+    background-color: #FFF;
+    margin: 0.8rem;
+} 
+
+.col-1 {
+    width: 50%;
+    flex-grow: 1;
+}
+
+.col-2 {
+    width: 50%;
+    flex-grow: 1;
+}
+
+.row-1 {
+    height: 50%;
+    flex-grow: 1;
+}
+
+.row-2 {
+    height: 50%;
+    flex-grow: 1;
+}
+
+
+.code {
+    font-family:courier,arial,helvetica;
+    cursor: text;
+}
+
+main .sequenceDiagram {
+    background-color: #FFF;
+ }
+
+@media (max-width: 400px) {
+    .flex-row-content {
+        flex-direction: column;
+        flex-grow: 0
+    }
+    .col-1 {
+        width: 90vw;
+        height: 105vh;
+        display: flex;
+        flex-direction: row;
+    }
+    .col-2 {
+        width: 90vw;
+        height: 95vh;
+        display: flex;
+        flex-direction: row;
+    }
+
+
+  }
+@media (max-width: 830px) {
+  .top-header {
+    height: 3em;     
+  }
+  nav {
+    height: 5em;
+  }
+}
